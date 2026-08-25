@@ -1,0 +1,4 @@
+requirement_id,risk_id,control_id,verification_id,status
+REQ-PAT-001,RISK-001,CTRL-001,VER-001,pass
+REQ-MVDA-001,RISK-002,CTRL-002,VER-002,pass
+REQ-SOFT-001,RISK-003,CTRL-003,VER-003,pass
