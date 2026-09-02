@@ -27,3 +27,12 @@ jobs:
         run: ruff check src tests examples
       - name: Test with branch coverage
         run: pytest --cov=bioprocess_pat --cov-report=term-missing --cov-fail-under=85
+      - name: Generate validation evidence
+        if: matrix.python-version == '3.12'
+        run: python examples/validate_soft_sensor.py
+      - name: Upload validation evidence
+        if: matrix.python-version == '3.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: soft-sensor-validation
+          path: artifacts/soft_sensor_validation.json
